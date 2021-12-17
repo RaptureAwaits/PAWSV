@@ -2,16 +2,16 @@
 
 import sqlite3
 
-conn = sqlite3.connect('tunes.db')
+conn = sqlite3.connect('resource/tunes.db')
 c = conn.cursor()
 
 def print_db():
     c.execute('SELECT * FROM tunes')
     data = c.fetchall()
 
-    head = ('id:', 'title:', 'artist:', 'user:', 'count:')
+    head = ('title:', 'artist:', 'path:')
     for i in data:
-        for j in range(0,5):
+        for j in range(0,3):
             print (head[j], i[j])
         print ('\n')
         
